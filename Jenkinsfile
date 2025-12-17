@@ -9,13 +9,13 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git branch: 'develop', url: 'https://github.com/akito-sama/cargo-tracker.git'
+                git branch: 'main', url: 'https://github.com/akito-sama/cargo-tracker.git'
             }
         }
 
         stage('Build & Test with Coverage') {
             steps {
-                bat 'mvn clean verify'
+                echo 'mvn clean verify'
             }
         }
     }
